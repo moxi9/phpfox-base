@@ -1,0 +1,39 @@
+{% import '@Theme/macro/form.html' as Form %}
+
+<div class="row margin-bottom-20">
+	<p>
+		Take a closer look with how to work with HTML forms and PHP validation.
+	</p>
+	<p>
+		HTML file can be found at: <b>/PF.Site/Apps/PHPfox_Base/views/forms.html</b>
+	</p>
+	<p>
+		PHP logic can be found in your <b>start.php</b> file, look for <b>@route /base/forms</b>
+	</p>
+</div>
+
+<section class="block">
+	<div class="title">Base Form (No AJAX)</div>
+	<div class="content">
+		{{ formData }}
+		<form method="post" class="ajax_post" action="{{ url('/base/forms') }}">
+			{{ Form.text('text_input', 'Text Input') }}
+			{{ Form.password('password_input', 'Password Input') }}
+			{{ Form.email('email_input', 'Email Input') }}
+			{{ Form.submit('Submit') }}
+		</form>
+	</div>
+</section>
+
+<section class="block">
+	<div class="title">Base Form (AJAX)</div>
+	<div class="content">
+		<div id="post_data"></div>
+		<form method="post" class="ajax_post" action="{{ url('/base/forms') }}">
+			{{ Form.text('text_input', 'Text Input') }}
+			{{ Form.password('password_input', 'Password Input') }}
+			{{ Form.email('email_input', 'Email Input') }}
+			{{ Form.submit('Submit') }}
+		</form>
+	</div>
+</section>

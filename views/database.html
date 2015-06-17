@@ -1,0 +1,21 @@
+<div class="row">
+	<p>
+		In this example we look into how to work with the database.
+	</p>
+	<p>
+		In the Apps <b>start.php</b> file, look for <b>@route /base/database</b>.
+	</p>
+</div>
+{% for user in users %}
+<div class="row">
+	<div class="row-10">
+		{{ user.user_id }}
+	</div>
+	<div class="row-20">
+		{{ user.full_name }}
+	</div>
+	<div class="row-70">
+		{{ user.email }}
+	</div>
+</div>
+{% endfor %}
