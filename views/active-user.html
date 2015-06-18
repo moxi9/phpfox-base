@@ -1,0 +1,15 @@
+<article class="row">
+	<h1>Hi {{ name }}!</h1>
+	<p>
+		The name above is taken from the PHP variable we assigned in the <b>start.php</b> file. Look for <b>'name' => $Controller->active->name</b>
+	</p>
+	<p>
+		When you are in a controller the <b>$Controller->active</b> holds the object of the active user that is logged in.
+	</p>
+</article>
+<article class="row">
+	<h1>Using Twig Variables - Hi {{ ActiveUser.name }}!</h1>
+	<p>
+		You can also use our Twig variables to get the active user. The <b>ActiveUser.</b> prefix in Twig variables are reserved for users that are logged in.
+	</p>
+</article>

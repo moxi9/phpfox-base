@@ -91,4 +91,58 @@ new Core\Route\Group('/base', function() {
 	 * For this specific example we use the "api.php" file.
 	 */
 	(new Core\Route('/external-controller'))->url(param('core.path') . 'PF.Site/Apps/PHPfox_Base/api.php');
+
+	/**
+	 * @route /base/active-user
+	 * Passing the ->auth(true) makes sure the user is logged in
+	 */
+	(new Core\Route('/active-user', function(Core\Controller $Controller) use ($Base) {
+
+		// Set the pages title, section title, h1 tag, sub-menu and template file
+		return $Controller->section('PHPfox App Base', '/base')
+			->h1('Active User', '/base/active-user')
+			->title('Active User')
+			->menu($Base->menu())
+			->render('active-user.html', [
+				'name' => $Controller->active->name
+			]);
+	}))->auth(true);
+
+	/**
+	 * @route /base/popups
+	 * Link to create a popup
+	 */
+	new Core\Route('/popups', function(Core\Controller $Controller) use ($Base) {
+
+		return $Controller->title('Popups')
+			->section('PHPfox App Base', '/base')
+			->h1('AJAX Popups', '/base/popups')
+			->menu($Base->menu())->render('popup.html');
+	});
+
+	/**
+	 * @route /base/popup-output
+	 * Popup output
+	 */
+	new Core\Route('/popup-output', function(Core\Controller $Controller) use ($Base) {
+
+		return $Controller->h1('Hello!', '/base/popup-output')
+			->menu($Base->menu())
+			->render('popup-output.html');
+	});
+});
+
+/**
+ * @route /api/PHPfox_Base
+ * Here we build a route outside our /base group because it needs to connect to the cores API route.
+ * We use this route to get the sections sub menu, which we have on all other sections.
+ * Since the @route /base/external-controller is an external route, we don't have the menu locally and have to build
+ * it with the API
+ */
+new Core\Route('/api/PHPfox_Base', function(Core\Controller $Controller) {
+	$Controller->menu((new Base())->menu());
+
+	return [
+		'menu' => $Controller->menu()
+	];
 });

@@ -8,7 +8,9 @@ class Base extends \Core\Model {
 			'Intro' => '/base',
 			'Forms' => '/base/forms',
 			'Database' => '/base/database',
-			'External Controller' => '/base/external-controller'
+			'External Controller' => '/base/external-controller',
+			'Active User' => '/base/active-user',
+			'AJAX Popups' => '/base/popups'
 		];
 
 		return $menus;
