@@ -7,10 +7,12 @@ class Base extends \Core\Model {
 		$menus = [
 			'Intro' => '/base',
 			'Forms' => '/base/forms',
+			'Adding a Feed' => '/base/adding-a-feed',
 			'Database' => '/base/database',
 			'External Controller' => '/base/external-controller',
 			'Active User' => '/base/active-user',
-			'AJAX Popups' => '/base/popups'
+			'AJAX Popups' => '/base/popups',
+			'Comments & Likes' => '/base/comments-and-likes'
 		];
 
 		return $menus;

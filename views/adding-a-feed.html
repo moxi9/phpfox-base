@@ -1,0 +1,9 @@
+{% import '@Theme/macro/form.html' as Form %}
+<div class="row margin-bottom-20">
+	In this example we look into how to add something to the feed. In your <b>start.php</b> loook for <b>@route /base/adding-a-feed</b>.
+</div>
+<form method="post" action="{{ url('/base/adding-a-feed') }}" class="ajax_post">
+	{{ Form.textarea('status', null, 'Say something...') }}
+	{{ Form.submit('Post') }}
+	<div id="ajax_output" style="overflow:auto; max-height:400px;"></div>
+</form>

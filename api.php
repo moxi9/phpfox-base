@@ -23,24 +23,22 @@ $menu = call('PHPfox_Base');
 	<head>
 		<title>PHPfox Base Api Test</title>
 	</head>
-	<!-- Special API tag for PHPfox -->
-	<api>
-		<!-- Add the section title -->
-		<section>
-			<name>PHPfox Base App</name>
-			<url>/base</url>
-		</section>
-		<!-- Add the h1 -->
-		<h1>
-			<name>External Controller</name>
-			<url>/base/external-controller</url>
-		</h1>
-		<!-- Add the sub section menu -->
-		<menu><?php echo $menu->menu; ?></menu>
-	</api>
-
-	<!-- Start main body -->
 	<body>
+		<!-- Special API tag for PHPfox -->
+		<api>
+			<!-- Add the section title -->
+			<section>
+				<name>PHPfox Base App</name>
+				<url>/base</url>
+			</section>
+			<!-- Add the h1 -->
+			<h1>
+				<name>External Controller</name>
+				<url>/base/external-controller</url>
+			</h1>
+			<!-- Add the sub section menu -->
+			<menu><?php echo $menu->menu; ?></menu>
+		</api>
 <?php
 	foreach ($users as $user) {
 		echo '<div class="row">';

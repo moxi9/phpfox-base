@@ -1,0 +1,12 @@
+<div class="row">
+	<p>
+		When you create an item you would use the <b>feed</b> table to store this item. By simply loading the feed in the PHP controller and adding the
+		Twig function we created in the HTML file it will load our built-in comment/like block.
+	</p>
+	<p>
+		This block is connected to the main feed. So any likes/comments added here will show up in the main feed.
+	</p>
+</div>
+<div class="comments">
+	{{ comments() }}
+</div>

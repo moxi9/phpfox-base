@@ -63,6 +63,37 @@ new Core\Route\Group('/base', function() {
 				]);
 	});
 
+
+	/**
+	 * @route /base/adding-a-feed
+	 * Learn how to add a new feed
+	 */
+	(new Core\Route('/adding-a-feed', function(Core\Controller $Controller) use($Base) {
+
+		// Check to see if we posted anything
+		if ($Controller->request->isPost()) {
+			$Feed = new \Api\Feed();
+
+			// Create a new post. Make sure to pass your "type_id", which is your App id
+			$feed = $Feed->post([
+				'type_id' => 'PHPfox_Base',
+				'content' => $Controller->request->get('val')['status']
+			]);
+
+			// Use jquery to output the new feed object
+			return j('#ajax_output')->html('<div class="message"><pre>' . print_r($feed, true) . '</pre></div>');
+		}
+
+		// Set the pages title, section title, h1 tag, sub-menu and template file
+		return $Controller->section('PHPfox App Base', '/base')
+			->h1('Adding a Feed', '/base/adding-a-feed')
+			->title('Adding a Feed')
+			->menu($Base->menu())
+			->render('adding-a-feed.html', [
+
+			]);
+	}))->auth(true);
+
 	/**
 	 * @route /base/database
 	 * Small example of how to connect to a Model and run a function
@@ -129,6 +160,43 @@ new Core\Route\Group('/base', function() {
 		return $Controller->h1('Hello!', '/base/popup-output')
 			->menu($Base->menu())
 			->render('popup-output.html');
+	});
+
+	/**
+	 * @route /base/comments-and-likes
+	 * In this example we look into adding Comments & Likes to your items
+	 */
+	new Core\Route('/comments-and-likes', function(Core\Controller $Controller) use ($Base) {
+
+		// Load the needed classes
+		$ApiFeed = new \Api\Feed();
+		$Cache = new \Core\Cache();
+
+		// Check if we cached a feed ID# earlier
+		$feedId = $Cache->get('test_feed_id');
+
+		if (!$feedId) {
+			// Create a new post
+			$feed = $ApiFeed->post([
+				'type_id' => 'PHPfox_Base',
+				'content' => 'Hello! I am a post.'
+			]);
+
+			// Add post to cache so we don't have to create a new post every time
+			$Cache->set('test_feed_id', $feed->id);
+			$feedId = $feed->id;
+		}
+
+		/**
+		 * Get a feed. When you get a feed it automatically loads the Comment & Like block routine.
+		 * You just need to output it in the HTML view file using {{ comments() }}
+		 */
+		$ApiFeed->get($feedId);
+
+		return $Controller->title('Comments & Likes')
+			->section('PHPfox App Base', '/base')
+			->h1('Comments & Likes', '/base/comments-and-likes')
+			->menu($Base->menu())->render('comments-and-likes.html');
 	});
 });
 
