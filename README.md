@@ -10,12 +10,5 @@ Got any questions? Join the discussion over at our [community](http://community.
 
 ## Setup
 
-Login into your PHPfox AdminCP and go to **Apps**. Then click on **NEW APP**.
-
-Paste in the input field:
-```
-https://github.com/moxi9/phpfox-base.git
-```
-
-Hit **Submit** and it should setup everything for you.
+Install [the app](http://store.phpfox.com/product/790/developers-test-app) from your AdminCP.
 
