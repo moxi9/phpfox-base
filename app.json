@@ -1,5 +1,11 @@
 {
 	"id": "PHPfox_Base",
-	"name": "PHPfox Base App",
-	"version": "1.0"
+	"name": "Developer Test App",
+	"version": "1.0",
+	"icon": "http://d2h79mkp7etn4r.cloudfront.net/icon/2015/07/aef8a08ddbc60af68deee54174473a89.png",
+	"menu": {
+		"name": "Developers Test App",
+		"url": "/base",
+		"icon": "code"
+	}
 }

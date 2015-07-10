@@ -121,7 +121,7 @@ new Core\Route\Group('/base', function() {
 	 * In this example we call an external program via our API routine. This can run any flavor of choice.
 	 * For this specific example we use the "api.php" file.
 	 */
-	(new Core\Route('/external-controller'))->url(param('core.path') . 'PF.Site/Apps/PHPfox_Base/api.php');
+	(new Core\Route('/external-controller'))->url(str_replace('index.php/', '', param('core.path')) . 'PF.Site/Apps/PHPfox_Base/api.php');
 
 	/**
 	 * @route /base/active-user
