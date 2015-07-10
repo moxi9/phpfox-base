@@ -1,6 +1,6 @@
 <?php
 
-namespace Apps\Phpfox_Base\Model;
+namespace Apps\PHPfox_Base\Model;
 
 class Base extends \Core\Model {
 	public function menu() {

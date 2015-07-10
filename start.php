@@ -1,7 +1,7 @@
 <?php
 
 // Load our Base Model for easy access
-use \Apps\Phpfox_Base\Model\Base;
+use \Apps\PHPfox_Base\Model\Base;
 
 // Group all our routes
 new Core\Route\Group('/base', function() {
@@ -101,7 +101,7 @@ new Core\Route\Group('/base', function() {
 	new Core\Route('/database', function(Core\Controller $Controller) use($Base) {
 
 		// Load our User Model, which will be located at: /PF.Site/PHPfox_Base/Model/User.php
-		$User = new \Apps\Phpfox_Base\Model\User();
+		$User = new \Apps\PHPfox_Base\Model\User();
 
 		// Run the random() function provded by the Model
 		$randomUsers = $User->random();

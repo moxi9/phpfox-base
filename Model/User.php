@@ -1,6 +1,6 @@
 <?php
 
-namespace Apps\Phpfox_Base\Model;
+namespace Apps\PHPfox_Base\Model;
 
 class User extends \Core\Model {
 	public function random() {
