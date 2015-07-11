@@ -12,7 +12,8 @@ class Base extends \Core\Model {
 			'External Controller' => '/base/external-controller',
 			'Active User' => '/base/active-user',
 			'AJAX Popups' => '/base/popups',
-			'Comments & Likes' => '/base/comments-and-likes'
+			'Comments & Likes' => '/base/comments-and-likes',
+			'Phrases' => '/base/phrasing'
 		];
 
 		return $menus;

@@ -1,0 +1,15 @@
+<div class="row">
+	This is a "<strong>{{ _p('core.sample_phrase') }}</strong>" using an internal template function.
+</div>
+<div class="row">
+	This is a "<strong>{{ thePhrase }}</strong>" using a variable passed by PHP.
+</div>
+<div class="row">
+	This is also a "<strong>{{ _p('Sample Phrase') }}</strong>" using a string that can be translated by the Site Admin.
+</div>
+<div class="row">
+	This is a "<strong>{{ _p('Sample {{ phrase }}', {phrase: 'Phrase'}) }}</strong>" with a variable passed to it.
+</div>
+<div class="row">
+	<i class="fa fa-info"></i> Find tips on working with phrases <a href="http://support.phpfox.com/apps/phrases/">here</a>.
+</div>

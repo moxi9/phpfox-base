@@ -198,6 +198,16 @@ new Core\Route\Group('/base', function() {
 			->h1('Comments & Likes', '/base/comments-and-likes')
 			->menu($Base->menu())->render('comments-and-likes.html');
 	});
+
+	new Core\Route('/phrasing', function(Core\Controller $controller) use($Base) {
+
+		return $controller->title('Phrases')
+			->section('PHPfox App Base', '/base')
+			->h1('Phrases', '/base/comments-and-likes')
+			->menu($Base->menu())->render('phrasing.html', [
+				'thePhrase' => _p('core.sample_phrase')
+			]);
+	});
 });
 
 /**
