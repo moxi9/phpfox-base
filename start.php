@@ -199,6 +199,10 @@ new Core\Route\Group('/base', function() {
 			->menu($Base->menu())->render('comments-and-likes.html');
 	});
 
+	/**
+	 * @route /base/phrasing
+	 * Working with Phrases
+	 */
 	new Core\Route('/phrasing', function(Core\Controller $controller) use($Base) {
 
 		return $controller->title('Phrases')
@@ -207,6 +211,30 @@ new Core\Route\Group('/base', function() {
 			->menu($Base->menu())->render('phrasing.html', [
 				'thePhrase' => _p('core.sample_phrase')
 			]);
+	});
+
+	/**
+	 * @route /base/is
+	 * Working with Is.*
+	 */
+	new Core\Route('/is', function(Core\Controller $controller) use($Base) {
+
+		if (Core\Is::module('blog')) {
+			// check to see if a module is enabled
+		}
+
+		if (Core\Is::user()) {
+			// check to see if a user is logged in
+		}
+
+		if ($controller->active->perm('blog.add_new_blog')) {
+			// check to see if a user has access to a specific user permission.
+		}
+
+		return $controller->title('Phrases')
+			->section('PHPfox App Base', '/base')
+			->h1('Phrases', '/base/comments-and-likes')
+			->menu($Base->menu())->render('is.html');
 	});
 });
 

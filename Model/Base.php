@@ -13,7 +13,8 @@ class Base extends \Core\Model {
 			'Active User' => '/base/active-user',
 			'AJAX Popups' => '/base/popups',
 			'Comments & Likes' => '/base/comments-and-likes',
-			'Phrases' => '/base/phrasing'
+			'Phrases' => '/base/phrasing',
+			'Is Function' => '/base/is'
 		];
 
 		return $menus;

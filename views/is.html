@@ -1,0 +1,24 @@
+{% if Is.user() %}
+<div class="row">
+	Check to see if I am a user...
+</div>
+{% endif %}
+
+{% if not Is.user() %}
+	<div class="row">
+		Check to see if I am <strong>NOT</strong> a user...
+	</div>
+{% endif %}
+
+{% if Is.module('blog') %}
+	<div class="row">
+		Check to see if module a specific is enabled...
+	</div>
+{% endif %}
+
+{% if ActiveUser.perm('blog.add_new_blog') %}
+	<div class="row">
+		Check to see if the user "<strong>{{ ActiveUser.name }}</strong>" has access to a specific user permission.
+	</div>
+{% endif %}
+
