@@ -1,0 +1,13 @@
+<div class="row">
+	When working with AJAX, make sure to place JavaScript in your <strong>autoload.js</strong> file, which can be found in the <strong>/assets/</strong> folder.
+</div>
+<div class="row">
+	<!-- In this example we use the built-in CSS selector .ajax -->
+	<a href="{{ url('/base/ajax-get') }}" class="ajax">Click Me</a>
+	<div id="ajax-response"></div>
+</div>
+<div class="row">
+	<!-- For this we use our own AJAX call. Check autoload.js -->
+	<a href="#" data-url="{{ url('/base/ajax-custom') }}" class="my-ajax-link">(CUSTOM) Click Me</a>
+	<div id="ajax-response-custom"></div>
+</div>

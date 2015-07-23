@@ -14,7 +14,8 @@ class Base extends \Core\Model {
 			'AJAX Popups' => '/base/popups',
 			'Comments & Likes' => '/base/comments-and-likes',
 			'Phrases' => '/base/phrasing',
-			'Is Function' => '/base/is'
+			'Is Function' => '/base/is',
+			'AJAX' => '/base/ajax'
 		];
 
 		return $menus;

@@ -231,10 +231,43 @@ new Core\Route\Group('/base', function() {
 			// check to see if a user has access to a specific user permission.
 		}
 
-		return $controller->title('Phrases')
+		return $controller->title('IS Function')
 			->section('PHPfox App Base', '/base')
-			->h1('Phrases', '/base/comments-and-likes')
+			->h1('IS', '/base/is')
 			->menu($Base->menu())->render('is.html');
+	});
+
+	/**
+	 * @route /base/ajax
+	 * Working with AJAX
+	 */
+	new Core\Route('/ajax', function(Core\Controller $controller) use($Base) {
+
+
+		return $controller->title('AJAX')
+			->section('PHPfox App Base', '/base')
+			->h1('AJAX', '/base/ajax')
+			->menu($Base->menu())->render('ajax.html');
+	});
+
+	/**
+	 * @route /base/ajax-get
+	 * Working with AJAX response
+	 */
+	new Core\Route('/ajax-get', function(Core\Controller $controller) use($Base) {
+
+		return [
+			'run' => "$('#ajax-response').html('<div class=\"message\">Hello World! Me is AJAX response.</div>');"
+		];
+	});
+
+	/**
+	 * @route /base/ajax-custom
+	 * Working with AJAX response
+	 */
+	new Core\Route('/ajax-custom', function(Core\Controller $controller) use($Base) {
+
+		echo '<div class="message">Well, hello again. I too am an AJAX response.</div>';
 	});
 });
 
